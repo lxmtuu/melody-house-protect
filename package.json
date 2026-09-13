@@ -1,0 +1,14 @@
+{
+  "name": "melody-house-root",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd melody-house && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../melody-house && npm install",
+    "db:push": "cd backend && npx prisma db push && node seed.js"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
